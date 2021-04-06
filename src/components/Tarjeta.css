@@ -1,0 +1,19 @@
+.card {
+    width: 250px;
+    height: 400px;
+    background-color: gray;
+    margin: 30px;
+}
+
+.photo {
+      width: 100%; 
+}
+
+img {
+    width: 100%;
+}
+
+.name {
+    color: white;
+    margin: 20px;
+}
