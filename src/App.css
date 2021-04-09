@@ -7,24 +7,3 @@ body {
   margin: 50px;
 }
 
-.filters {
-  margin: 50px;
-  display: flex;
-
-}
-
-label {
-  margin-left: 20px;
-}
-
-input {
-  margin-left: 10px;
-}
-
-h2 {
-  margin-left: 20px;
-}
-
-.filter_byname, .filter_bystatus, .filter_bygender {
-  margin-right: 60px;
-}
