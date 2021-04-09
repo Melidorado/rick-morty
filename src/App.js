@@ -123,7 +123,7 @@ const App = () => {
           <Tarjeta
             name={personaje.name}
             img={personaje.image}
-            id={personaje.id}
+            key={personaje.id}
           />
         ))}
       </div>
