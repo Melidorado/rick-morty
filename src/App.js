@@ -10,33 +10,39 @@ const App = () => {
   const [gender, setGender] = useState("");
 
   useEffect(() => {
-    fetch(
-      `https://rickandmortyapi.com/api/character?name=${value}&status=${status}&gender=${gender}`
-    )
+    const baseUrl = "https://rickandmortyapi.com/api/character?"
+    const inputSearch = value ?`name=${value}&` :''
+    const statusSearch = status ?`status=${status}&` : ''
+    const genderSearch = gender ?`gender=${gender}` :''
+
+    const url = baseUrl + inputSearch + statusSearch + genderSearch
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setPersonajes(data.results);
       });
   }, [value, status, gender]);
 
-  const inputSearch = (value) => {
-    setValue(value);
+  const handleChange = (e) => {
+    setValue(e.target.value);
   };
 
-  const statusSearch = (value) => {
-    setStatus(value);
-  };
+const handleChangeStatus = (e) => {
+    setStatus(e.target.value);
+};
 
-  const genderSearch = (value) => {
-    setGender(value);
-  };
+const handleChangeGender = (e) => {
+    setGender(e.target.value);
+};
+
 
   return (
     <div>
       <Filters 
-      inputSearch = {inputSearch}
-      statusSearch = {statusSearch}
-      genderSearch = {genderSearch}
+      handleChange = {handleChange}
+      handleChangeStatus = {handleChangeStatus}
+      handleChangeGender = {handleChangeGender}
+      inputValue = {value}
       />
       <div className="container">
         {personajes.map((personaje) => (
